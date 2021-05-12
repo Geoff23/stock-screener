@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.svg') }}">
+	<title>Stock Screener 9.3 - New Screen</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+	<script src="{{ url_for('static', filename='jquery/jquery.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+	<style data="test" type="text/css"></style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="\stock-screener" id="logowithtext"><img id="logo1" src="/static/images/logo.svg">Stock Screener 9.3</a></li>	
+			<li><a href="\stock-screener\about" class="animatedlink">About</a></li>
+			<li><a href="\stock-screener\feedback" class="animatedlink">Feedback</a></li>
+		</ul>
+	</nav>
+	<div id="main">
+		<div id="counter">
+			<span>Number of Stocks</span>
+			<span>That Meet Your Criteria</span>
+			<h1>0</h1>
+		</div>
+		<form method="POST">
+			<div class="container">
+				<span>Market cap is
+					<span class="tooltip">Market cap is used to determine a company's size. It is calculated by multiplying the number of shares outstanding by the stock price. 
+						</br>Small cap: <2 billion
+						</br>Mid cap: 2-10 billion
+						</br>Large cap: >10 billion	
+					</span>
+				</span>
+				<div class="selector">
+					<label id="choice1">
+						<input type="checkbox" name="market_cap" value="small_cap">
+						<span>Small Cap</span>
+					</label>
+					<label id="choice2">
+						<input type="checkbox" name="market_cap" value="mid_cap">
+						<span>Mid Cap</span>
+					</label>
+					<label id="choice3">
+						<input type="checkbox" name="market_cap" value="large_cap">
+						<span>Large Cap</span>
+					</label>
+				</div>
+			</div>
+
+			<div class="input-container">
+				<span class="input-text">Current ratio at least
+					<span class="tooltip">Current ratio is used to evaluate a company's liquidity and its ability to pay for obligations due within one year. It is calculated by dividing current assets by current liabilities.</span>
+				</span>
+				<span class="input-box">
+					<input type="number" name="current_ratio" step="0.01">
+				</span>
+			</div>
+			
+			<div class="input-container">
+				<span class="input-text">Long term debt to net current assets at most
+					<span class="tooltip">Long term debt is debt that is due in more than one year. Net current assets is calculated by subtracting current liabilities from current assets. If the ratio is greater than one, long term debt exceeds net current assets.</span>
+				</span>
+				<span class="input-box">
+					<input type="number" name="debt_to_assets" step="0.01">
+				</span>
+			</div>
+			
+			<div class="slider-container">
+				<span class="input-text">Some earnings in each of the past <b>0</b> years
+					<span class="tooltip">This criteria requires positive net income for a certain number of years. For example, if it is set to 10, earnings must be positive in each year from 2011-2020.</span>
+				</span>
+				<input type="range" name="earnings_history" min="0" max="10" value="0" class="slider" id="slider1">
+			</div>
+
+			<div class="slider-container">
+				<span class="input-text">Uninterrupted payments for at least the past <b>0</b> years
+					<span class="tooltip">This means a company must pay a dividend for x amount of years in a row. For example, if the criteria is set to 10, the company must have paid dividends from 2011-2020.</span>
+				</span>
+				<input type="range" name="dividend_history" min="0" max="20" value="0" class="slider" id="slider2">
+			</div>
+
+			<div class="input-container">
+				<span class="input-text">Earnings per share growth at least
+					<span class="tooltip">Earnings per share growth is calculated over a ten year period using three year averages at the beginning and end. 
+						</br>Ex: average EPS of 2018-2020 divided by average EPS of 2009-2011.
+					</span>
+				</span>
+				<span class="input-box">
+					<input type="number" name="eps_growth" step="0.01">
+				</span>
+			</div>
+
+			<div class="input-container">
+				<span class="input-text">Current price to average earnings at most
+					<span class="tooltip">Here, price means the market cap of the company. Average earnings is measured over a three-year period. The ratio of the two is used to see if the stock is undervalued or overvalued.</span>
+				</span>
+				<span class="input-box">
+					<input type="number" name="price_to_earnings" step="0.01">
+				</span>
+			</div>
+
+			<div class="input-container">
+				<span class="input-text">Current price to book value at most
+					<span class="tooltip">This is calculated by dividing the current market cap of the company by its book value last reported. Like the price to earnings ratio, it is used to indicate whether a stock is underpriced or overpriced.</span>
+				</span>
+				<span class="input-box">
+					<input type="number" name="price_to_book" step="0.01">
+				</span>
+			</div>
+			
+			<input class="button" type="submit" value="Find Stocks"/>
+		</form>
+	</div>
+</body>
+</html>

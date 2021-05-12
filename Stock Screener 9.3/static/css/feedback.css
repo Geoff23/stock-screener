@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    justify-content: center;
+    background: #fafafa;
+}
+
+iframe {
+    margin-top: 5%;
+}

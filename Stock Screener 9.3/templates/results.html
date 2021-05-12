@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.svg') }}">
+	<title>Stock Screener 9.3 - Results</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+	<script src="{{ url_for('static', filename='jquery/jquery.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='datatables/datatables.css') }}">
+	<script src="{{ url_for('static', filename='datatables/datatables.js') }}"></script>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="\stock-screener" id="logowithtext"><img id="logo1" src="/static/images/logo.svg">Stock Screener 9.3</a></li>	
+			<li><a href="\stock-screener\about" class="animatedlink">About</a></li>
+			<li><a href="\stock-screener\feedback" class="animatedlink">Feedback</a></li>
+		</ul>
+	</nav>
+	<div id="main">
+		<table id="results" class="display">
+			<thead>
+				<th>Symbol</th>
+				<th>Name</th>
+				<th>Market Cap</th>
+				<th>Current Ratio</th>
+				<th>Debt to Assets</th>
+				<th>Earnings History</th>
+				<th>Dividend History</th>
+				<th>EPS Growth</th>
+				<th>Price to Earnings</th>
+				<th>Price to Book</th>
+			</thead>
+			<tbody>
+			{% for row in results %}
+				<tr>
+				{% for cell in row %}
+					<td>{{cell}}</td>
+				{% endfor %}
+				</tr>
+			{% endfor %}
+			</tbody>
+	</div>
+</body>
+</html>

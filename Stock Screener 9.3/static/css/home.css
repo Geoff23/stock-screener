@@ -1,0 +1,196 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+	height: 10%;
+	display: flex;
+	align-items: center;
+}
+
+ul {
+	padding: 0;
+	margin-left: 2.5vw;
+	display: flex;
+	align-items: center;
+}
+
+li {
+	display: inline;
+	margin-right: 30px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	position: relative;
+}
+
+#logowithtext {
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+}
+
+#logo {
+	width: 30px;
+	height: 30px;
+	margin-right: 15px;
+}
+
+.animatedlink:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	width: 100%;
+	background-color: #00ff80;
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: all 0.25s ease-in-out;
+}
+
+.animatedlink:hover:after {
+	visibility: visible;
+	transform: scaleX(1);
+}
+
+header {
+	height: 90%;
+	display: flex;
+	align-items: center;
+}
+
+h2 {
+	margin: 0;
+	font-size: 48px;
+	opacity: 0%;
+	animation: flyinfromleft 1s ease-out forwards, fadein 1s ease-out forwards;
+	animation-delay: 0.25s;
+}
+
+h1 {
+	margin: 0;
+	font-size: 64px;
+	opacity: 0%;
+	animation: flyinfromleft 1s ease-out forwards, fadein 1s ease-out forwards;
+	animation-delay: 0.5s;
+}
+
+@keyframes flyinfromleft {
+	from {transform: translate(5vw);}
+	to {transform: translate(10vw);}
+}
+
+@keyframes fadein {
+	from {opacity: 0%;}
+	to {opacity: 100%;}
+}
+
+.button-container {
+	margin-top: 4vh;
+	margin-left: 10vw;
+	display: flex;
+	align-items: center;
+}
+
+#button1 {
+	font-size: 18px;
+	color: white;
+	padding: 12px 36px;
+	background: #00ff80;
+	border: none;
+	border-radius: 100px;
+	cursor: pointer;
+	outline: none;
+}
+
+#button1:hover {
+	background: #00fa7d;
+}
+
+#button2 {
+	margin-left: 2vw;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 12px 24px 12px 54px;
+	background: white;
+	border: none;
+	border-radius: 100px;
+	cursor: pointer;
+	outline: none;
+}
+
+#button2 .circle {
+	position: absolute;
+    left: 0;
+	width: 44.8px;
+	height: 44.8px;
+	background: #00ff80;
+	border-radius: 100px;
+	transition: width 0.5s;
+}
+
+#button2 .button-text {
+	font-size: 18px;
+	color: #00ff80;
+	z-index: 100;
+	transition: color 0.5s;
+}
+
+#button2 .arrowtail:after {
+	content: "";
+	position: absolute;
+	top: 21.4px;
+	left: 10.4px;
+	width: 13px;
+	background: white;
+	border: solid white 1px;
+	opacity: 0%;
+	transition: left 0.5s, opacity 0.5s;
+}
+
+#button2 .arrowhead:after {
+	content: "";
+	position: absolute;
+	top: 17.4px;
+	left: 15.4px;
+	width: 8px;
+	height: 8px;
+	border: solid white;
+	border-width: 2px 2px 0 0;
+	transform: rotate(45deg);
+	transition: left 0.5s;
+}
+
+#button2:hover .circle {
+	width: 100%
+}
+
+#button2:hover .button-text {
+	color: white;
+}
+
+#button2:hover .arrowtail:after {
+	left: 23px;
+	opacity: 100%;
+}
+
+#button2:hover .arrowhead:after {
+	left: 27.4px;
+}
+
+#logo2 {
+	position: absolute;
+	right: 10%;
+	width: 300px;
+	height: 300px;
+}

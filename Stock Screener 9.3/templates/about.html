@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.svg') }}">
+	<title>Stock Screener 9.3 - About</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+</head>
+<body>
+	<div>
+		<a href="\stock-screener" id="logowithtext"><img id="logo" src="/static/images/logo.svg">Stock Screener 9.3</a>	
+		<a href="\stock-screener\about" class="animatedlink" id="page1">About this stock screener</a>
+		<a href="\stock-screener\about\criteria" class="animatedlink" id="page2">Graham's 7 criteria</a>
+		<a href="\stock-screener\about\timeline" class="animatedlink" id="page3">Timeline</a>
+	</div>
+	<article>
+		<h1>How it began</h1>
+		<p>Back in 2019, I was reading a book called “The Intelligent Investor” by Benjamin Graham. By then, I was already on chapter 14, which introduced seven criteria for selecting stocks.</p>
+		<p>Naturally, I wondered: what stocks meet all the criteria?</p>
+		<p>So, I started with a few stocks I knew: Apple, Nvidia, Tesla, etc. I would go on websites like Yahoo Finance and Macrotrends to find statistics for each stock, like market cap and current ratio. Then, I would see if they meet the criteria:</p>
+		<ul>
+			<li>Is the market cap at least $2 billion?</li>
+			<li>Is the current ratio at least 2?</li>
+			<li>And so on...</li>
+		</ul>
+		<p>One by one, they got eliminated, and I started running out of stocks I could research. So, I pulled up a list of all the stocks in the S&P 500 Index. Some failed right away, others met all the requirements except one. But after spending hours combing through balance sheets and income statements, I still couldn’t find a single stock that met all the criteria.</p>
+		<p>Then I thought: I could use stock screeners! That would save me tons of time. Unfortunately, none of them had the criteria listed in the book. The ones that did were obscure and difficult to use. So, I decided to program my own stock screener.</p>
+		
+		<h1>How it works</h1>
+		<p>This application was built using Python and Flask. The website itself uses HTML, CSS, and JavaScript. Each of them serves a different function:</p>
+		<ul>
+			<li>HTML sets the page content and structure</li>
+			<li>CSS styles the website and makes it visually appealing</li>
+			<li>Javascript updates the HTML and CSS to make the website interactive</li>
+		</ul>
+		<img src="\static\images\languages.jpeg" alt="HTML, CSS, and Javascript">
+		<p>To evaluate stocks, the stock screener first needs data. To do this, the python program extracts the ticker symbols of over 3000 stocks that make up the CRSP US Total Stock Market Index from a CSV file. Then, it uses Beautiful Soup to extract financial data from websites like MacroTrends and Yahoo Finance, before storing the data in an SQLite database.</p>
+		<p>When a user submits a form through the website, Flask sends the form’s data back to the server, which checks the database to find stocks that meet the given criteria. It then returns all those stocks along with their statistics back to the website, where it is displayed as a table. This is done using a jQuery plug-in called DataTables, which allows the user to sort and compare the stocks.</p>
+	</article>
+</body>
+</html>

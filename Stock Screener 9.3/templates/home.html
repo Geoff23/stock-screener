@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.svg') }}">
+	<title>Stock Screener 9.3 - Home</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="\stock-screener" id="logowithtext"><img id="logo" src="/static/images/logo.svg">Stock Screener 9.3</a></li>	
+			<li><a href="\stock-screener\about" class="animatedlink">About</a></li>
+			<li><a href="\stock-screener\feedback" class="animatedlink">Feedback</a></li>
+		</ul>
+	</nav>
+	<header>
+		<div>
+			<h2>Welcome to</h2>
+			<h1>Stock Screener 9.3</h1>
+			<div class="button-container">
+				<form action="/stock-screener/new-screen">
+					<button id="button1" type="submit">
+						<span>Get Started</span>
+					</button>
+				</form>
+				<form action="/stock-screener/about">
+					<button id="button2" type="submit">
+						<span class="circle">
+							<span class="arrowtail"></span>
+							<span class="arrowhead"></span>
+						</span>
+						<span class="button-text">Learn More</span>
+					</button>
+				</form>
+			</div>
+		</div>
+		<img id="logo2" src="/static/images/logo.svg">
+	</header>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Stock Screener 9.3
+10/7/2020 - 10/17/2020
+
+Major changes:
+    - New timeline showing how the website evolved over time

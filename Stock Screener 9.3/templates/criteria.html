@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.svg') }}">
+	<title>Stock Screener 9.3 - About</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/criteria.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+</head>
+<body>
+	<div>
+		<a href="\stock-screener" id="logowithtext"><img id="logo" src="/static/images/logo.svg">Stock Screener 9.3</a>	
+		<a href="\stock-screener\about" class="animatedlink" id="page1">About this stock screener</a>
+		<a href="\stock-screener\about\criteria" class="animatedlink" id="page2">Graham's 7 criteria</a>
+		<a href="\stock-screener\about\timeline" class="animatedlink" id="page3">Timeline</a>
+	</div>
+	<article>
+		<h1>1. Size</h1>
+		<p>"...not less than $100 million of annual sales..."</p>
+		<p>The fourth edition of “The Intelligent Investor” was written half a century ago in the 1970s. Because of inflation, $100 million in annual sales then would not be much today. Fortunately, Jason Zweig suggested in the commentary that “the investor steer clear from stocks with a market value of less than $2 billion.” So, we will use market cap as the measure for size.</p>
+		<p>Stocks are usually divided into three categories: small-cap, mid-cap, and large-cap. Here are the definitions for each category:</p>
+		<ul>
+			<li>Small-cap: less than $2 billion</li>
+			<li>Mid-cap: $2-10 billion</li>
+			<li>Large-cap: greater than $10 billion</li>
+		</ul>
+		<p>To get stocks that have a market cap of at least $2 billion, select mid-cap and large-cap.</p>
+
+		<h1>2. Financial Condition</h1>
+		<p>"...current assets should be at least twice current liabilities - a so-called two-to-one current ratio. Also, long-term debt should not exceed the net current assets..."</p>
+		<p>To pass this test, you need to pass two requirements. Firstly, the current ratio must be at least 2. Secondly, long-term debt can not exceed net current assets. To find stocks that meet both requirements, enter 2 for current ratio and 1 for long-term debt to net current assets.</p>
+		
+		<h1>3. Earnings Stability</h1>
+		<p>"Some earnings...in each of the past ten years."</p>
+		<p>This means that the company must be profitable in each of the last ten years. In other words, its net income must be positive for at least ten years.</p>
+		
+		<h1>4. Dividend Record</h1>
+		<p>"Uninterrupted payments for at least the past 20 years."</p>
+		<p>This is similar to 3, but it evaluates dividends rather than earnings. The company must pay dividends continuously for 20 years or more.</p>
+		
+		<h1>5. Earnings Growth</h1>
+		<p>A minimum increase of at least one-third in per-share earnings in the past ten years..."</p>
+		<p>This is calculated using 3-year averages at the beginning and end. For example, the earnings growth from 2011 to 2020 is the average EPS of 2018-2020 divided by that of 2009-2011. To get stocks with per-share earnings that grew 1/3 over the past ten years, enter 0.33.</p>
+		
+		<h1>6. Price to Earnings Ratio</h1>
+		<p>"Current price should not be more than 15 times average earnings of the past three years."</p>
+		<p>PE ratio is calculated by dividing the market cap of a company by its total earnings. Here, we’re dividing by the average earnings of the past three years. A higher PE ratio means that the stock is more expensive, and a lower one means the opposite.</p>
+		
+		<h1>7. Price to Assets Ratio</h1>
+		<p>"Current price should not be more than 1.5 times the book value last reported."</p>
+		<p>This means that the price/book ratio should be 1.5 at most. Book value is calculated by subtracting liabilities from tangible assets. Similar to a PE ratio, it is a way to measure whether a stock is overvalued or not.
+		</p>
+	</article>
+</body>
+</html>
